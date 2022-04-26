@@ -1,12 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { render } from 'react-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const teamMembers = [
+  {firstName: 'Milton', lastName: 'Ochoa', role: 'student developer', hobby: 'coding' },
+  {firstName: 'Casey', lastName: 'Harding', role: 'Lead Developer', hobby: 'Letting his team members take a year paid vacation to a beach somewhere on the Mediterranean.'}
+]
+//Why is this function name Capitalized??
+function SimpleForm() {
+  const [ formValues, setFormValues ] = useState( {firstName: '', lastName: '', role: '', hobby: '' } );
+  const [ people, setPeople ] = useState(teamMembers);
+
+  const change = (evt) => {
+    const { name, value } = evt.target;
+    setFormValues( { ...formValues, [name]:value } );
+  }
+
+  const submit = (evt) => {
+    evt.preventDefault();
+    setPeople(
+      people.concat({
+        personFirstName: formValues.firstName,
+        personLastName: formValues.lastName,
+        personRole: formValues.role,
+        personHobby: formValues.hobby
+      }))
+    setFormValues( {personFirstName: '', personLastName: '', personRole: '', personHobby: '' } );
+  }
+
+  return (
+    <div className='container'>
+      <h1>Welcome to our Team Members Page!</h1>
+      <h3>These are our current members.</h3>
+      {people.map( (person, idx) => {
+        return <div key={idx}>{person.personFirstName} {person.personLastName} is a {person.personRole} who likes {person.personHobby}</div>
+      })}
+      {}
+    </div>
+  )
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <SimpleForm />
     <App />
   </React.StrictMode>
 );
