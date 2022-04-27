@@ -28,7 +28,7 @@ function SimpleForm() {
         role: formValues.role,
         hobby: formValues.hobby
       }))
-    setFormValues( {personFirstName: '', personLastName: '', personRole: '', personHobby: '' } );
+    setFormValues( {firstName: '', lastName: '', role: '', hobby: '' } );
   }
 
   return (
@@ -38,7 +38,33 @@ function SimpleForm() {
       {people.map( (person, idx) => {
         return <div key={idx}>{person.firstName} {person.lastName} is a {person.role} who likes {person.hobby}</div>
       })}
-      {}
+      <form onSubmit={submit}>
+        <input
+        type='text'
+        onChange={change}
+        name='firstName'
+        value={formValues.firstName}
+        />
+        <input
+        type='text'
+        onChange={change}
+        name='lastName'
+        value={formValues.lastName}
+        />
+        <input
+        type='text'
+        onChange={change}
+        name='role'
+        value={formValues.role}
+        />
+        <input
+        type='text'
+        onChange={change}
+        name='hobby'
+        value={formValues.hobby}
+        />
+        <input type='submit' value='Enter Data' />
+      </form>
     </div>
   )
 }
