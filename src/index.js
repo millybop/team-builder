@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 const teamMembers = [
   {firstName: 'Milton', lastName: 'Ochoa', role: 'student developer', hobby: 'coding' },
-  {firstName: 'Casey', lastName: 'Harding', role: 'Lead Developer', hobby: 'Letting his team members take a year paid vacation to a beach somewhere on the Mediterranean.'}
+  {firstName: 'Casey', lastName: 'Harding', role: 'Lead Developer', hobby: 'letting his team members take a year paid vacation to a beach somewhere on the Mediterranean.'}
 ]
 //Why is this function name Capitalized??
 function SimpleForm() {
@@ -23,10 +23,10 @@ function SimpleForm() {
     evt.preventDefault();
     setPeople(
       people.concat({
-        personFirstName: formValues.firstName,
-        personLastName: formValues.lastName,
-        personRole: formValues.role,
-        personHobby: formValues.hobby
+        firstName: formValues.firstName,
+        lastName: formValues.lastName,
+        role: formValues.role,
+        hobby: formValues.hobby
       }))
     setFormValues( {personFirstName: '', personLastName: '', personRole: '', personHobby: '' } );
   }
@@ -36,7 +36,7 @@ function SimpleForm() {
       <h1>Welcome to our Team Members Page!</h1>
       <h3>These are our current members.</h3>
       {people.map( (person, idx) => {
-        return <div key={idx}>{person.personFirstName} {person.personLastName} is a {person.personRole} who likes {person.personHobby}</div>
+        return <div key={idx}>{person.firstName} {person.lastName} is a {person.role} who likes {person.hobby}</div>
       })}
       {}
     </div>

@@ -10,12 +10,12 @@ In this project you'll build an app that will keep track of memebers of a team. 
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] Use `npx create-react-app .` (NOTE THE PERIOD AT THE END!) to initiate the project.
-- [ ] Start up the app using `npm start`
-- [ ] Implement the project on your newly created `main` branch, committing changes regularly.
-- [ ] Push commits: git push origin `main`.
+- [x] Create a forked copy of this project.
+- [x] Clone your OWN version of the repository in your terminal
+- [x] Use `npx create-react-app .` (NOTE THE PERIOD AT THE END!) to initiate the project.
+- [x] Start up the app using `npm start`
+- [x] Implement the project on your newly created `main` branch, committing changes regularly.
+- [x] Push commits: git push origin `main`.
 
 ### Task 2: Minimum Viable Product
 
